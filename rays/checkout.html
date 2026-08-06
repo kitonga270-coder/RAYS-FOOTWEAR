@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout — Rays Footwear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .checkout-grid{display:grid;grid-template-columns:1fr 400px;gap:30px;align-items:start;}
+    @media(max-width:900px){.checkout-grid{grid-template-columns:1fr;}}
+    .co-card{background:var(--dark2);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius2);padding:24px;margin-bottom:20px;}
+    .co-title{color:var(--white);font-size:1rem;font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+    .co-title .num{width:26px;height:26px;background:var(--gold);color:var(--black);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:800;}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+    @media(max-width:600px){.form-row{grid-template-columns:1fr;}}
+    .form-group{margin-bottom:14px;}
+    .form-group label{display:block;color:var(--gold);font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;}
+    .form-group input,.form-group select,.form-group textarea{width:100%;background:var(--dark3);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:12px 15px;color:var(--white);font-size:0.88rem;font-family:var(--font);transition:var(--transition);}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);}
+    .form-group input::placeholder,.form-group textarea::placeholder{color:var(--gray);}
+    .pay-tab{padding:10px 20px;border:none;background:var(--dark3);color:var(--gray2);font-family:var(--font);font-size:0.82rem;font-weight:600;cursor:pointer;border-bottom:2px solid transparent;transition:var(--transition);}
+    .pay-tab.active{color:var(--gold);border-bottom-color:var(--gold);background:rgba(212,175,55,0.05);}
+    .pay-tabs{display:flex;border-bottom:1px solid rgba(255,255,255,0.06);margin-bottom:20px;}
+    .order-summary-card{background:var(--dark2);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius2);padding:24px;position:sticky;top:90px;}
+    .promo-row{display:flex;gap:8px;margin-bottom:14px;}
+    .promo-row input{flex:1;background:var(--dark3);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:10px 14px;color:var(--white);font-size:0.85rem;font-family:var(--font);}
+    .promo-row input:focus{border-color:var(--gold);}
+    .mpesa-box{background:rgba(0,150,58,0.06);border:1px solid rgba(0,150,58,0.25);border-radius:var(--radius);padding:20px;text-align:center;}
+    .mpesa-logo{font-size:2rem;font-weight:900;color:#00963a;margin-bottom:8px;}
+    .till-number{font-size:2rem;font-weight:800;color:var(--white);letter-spacing:3px;}
+    .conf-box{text-align:center;padding:40px 20px;}
+    .conf-icon{font-size:4rem;margin-bottom:16px;}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-top">
+    <p>🔒 Secure Checkout &nbsp;|&nbsp; M-Pesa Till: <span class="promo-tag">4130312</span></p>
+    <p style="color:var(--black)">📍 Nairobi, Kenya &nbsp;|&nbsp; 0703 927 970</p>
+  </div>
+  <div class="nav-main">
+    <a href="index.html" class="nav-logo" style="gap:0">
+      <img src="images/logo.png" alt="Rays Footwear" style="height:46px;width:auto;object-fit:contain;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div style="display:none;align-items:center;gap:8px;">
+        <div class="logo-mark">RF</div>
+        <div><div class="logo-text">Rays <span>Footwear</span></div><div class="logo-sub">Style Beyond the Game</div></div>
+      </div>
+    </a>
+    <nav class="nav-menu" id="navMenu">
+      <a href="index.html" data-key="home">Home</a>
+      <a href="sneakers.html" data-key="sneakers">Sneakers</a>
+      <a href="jerseys.html" data-key="jerseys">Jerseys</a>
+      <a href="kids.html" data-key="kids">Kids</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" data-open-cart title="Cart">
+        <i class="fa fa-shopping-bag"></i>
+        <span class="badge-count cart-badge" style="display:none">0</span>
+      </button>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header" style="padding:100px 0 35px">
+  <div class="container">
+    <h1>Secure <span class="gold">Checkout</span></h1>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep"><i class="fa fa-chevron-right"></i></span>
+      <a href="#">Cart</a>
+      <span class="sep"><i class="fa fa-chevron-right"></i></span>
+      <span class="cur">Checkout</span>
+    </div>
+  </div>
+</div>
+
+<section class="sec-sm">
+  <div class="container">
+    <!-- CHECKOUT FORM -->
+    <div id="checkoutForm">
+      <div class="checkout-grid">
+        <!-- LEFT: FORM -->
+        <div>
+          <!-- Customer Info -->
+          <div class="co-card">
+            <div class="co-title"><span class="num">1</span> Customer Information</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name *</label>
+                <input type="text" id="custName" placeholder="John Doe"/>
+              </div>
+              <div class="form-group">
+                <label>Phone Number *</label>
+                <input type="tel" id="custPhone" placeholder="0712 345 678"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address *</label>
+              <input type="email" id="custEmail" placeholder="john@example.com"/>
+            </div>
+          </div>
+
+          <!-- Delivery -->
+          <div class="co-card">
+            <div class="co-title"><span class="num">2</span> Delivery Address</div>
+            <div class="form-group">
+              <label>Street Address *</label>
+              <input type="text" id="custAddress" placeholder="e.g. Kimathi Street, CBD"/>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>City *</label>
+                <select id="deliveryCity">
+                  <option value="nairobi">Nairobi (KES 200)</option>
+                  <option value="mombasa">Mombasa (KES 350)</option>
+                  <option value="kisumu">Kisumu (KES 350)</option>
+                  <option value="nakuru">Nakuru (KES 350)</option>
+                  <option value="eldoret">Eldoret (KES 350)</option>
+                  <option value="other">Other (KES 350)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Landmark / Area</label>
+                <input type="text" placeholder="e.g. Near Junction Mall"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Special Instructions</label>
+              <textarea id="custNotes" placeholder="Any special delivery instructions, gate codes, etc." rows="3" style="resize:vertical"></textarea>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;background:rgba(46,204,113,0.06);border:1px solid rgba(46,204,113,0.2);border-radius:8px;padding:12px">
+              <i class="fa fa-truck" style="color:var(--green)"></i>
+              <div>
+                <div style="color:var(--white);font-size:0.82rem;font-weight:600">Same-day delivery in Nairobi</div>
+                <div style="color:var(--gray);font-size:0.75rem">Order before 2PM for same-day delivery. Other cities: 1-3 days.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment -->
+          <div class="co-card">
+            <div class="co-title"><span class="num">3</span> Payment Method</div>
+            <div class="pay-tabs">
+              <button class="pay-tab active" data-tab="mpesa" onclick="switchPayment('mpesa')">📱 M-Pesa</button>
+              <button class="pay-tab" data-tab="card" onclick="switchPayment('card')">💳 Card</button>
+              <button class="pay-tab" data-tab="other" onclick="switchPayment('other')">🔗 Other</button>
+            </div>
+
+            <!-- M-PESA -->
+            <div id="pay-mpesa">
+              <div class="mpesa-box">
+                <div class="mpesa-logo">M-PESA</div>
+                <p style="color:var(--gray);font-size:0.82rem;margin-bottom:12px">Send payment to Till Number:</p>
+                <div class="till-number">4130312</div>
+                <p style="color:var(--gold);font-weight:700;font-size:1.1rem;margin:8px 0">Amount: <span id="mpesaAmount">KES 0</span></p>
+                <p style="color:var(--gray);font-size:0.75rem">Rays Footwear — Style Beyond the Game</p>
+              </div>
+              <div style="margin-top:18px">
+                <div class="form-group">
+                  <label>M-Pesa Phone Number</label>
+                  <input type="tel" id="mpesaPhone" placeholder="0712 345 678 (for STK Push)"/>
+                </div>
+                <button id="mpesaBtn" onclick="initiateMpesa()" class="btn btn-gold" style="width:100%;justify-content:center">
+                  <i class="fa fa-mobile-alt"></i> Send M-Pesa STK Push
+                </button>
+                <div id="mpesaInstructions" style="display:none;margin-top:14px;background:rgba(0,150,58,0.06);border:1px solid rgba(0,150,58,0.2);border-radius:8px;padding:14px">
+                  <div style="color:var(--green);font-weight:700;margin-bottom:8px">📲 Steps to Complete Payment:</div>
+                  <ol style="list-style:decimal;padding-left:20px;display:flex;flex-direction:column;gap:6px">
+                    <li style="color:var(--gray3);font-size:0.82rem">Check your phone for the M-Pesa prompt</li>
+                    <li style="color:var(--gray3);font-size:0.82rem">Enter your M-Pesa PIN</li>
+                    <li style="color:var(--gray3);font-size:0.82rem">You'll receive a confirmation SMS</li>
+                    <li style="color:var(--gray3);font-size:0.82rem">Share the M-Pesa code below when placing order</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD -->
+            <div id="pay-card" style="display:none">
+              <div style="display:flex;gap:8px;margin-bottom:16px">
+                <span class="pay-icon" style="font-size:0.8rem">VISA</span>
+                <span class="pay-icon" style="font-size:0.8rem">MASTERCARD</span>
+              </div>
+              <div class="form-group">
+                <label>Card Number</label>
+                <input type="text" placeholder="1234 5678 9012 3456" maxlength="19"/>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Expiry Date</label>
+                  <input type="text" placeholder="MM/YY" maxlength="5"/>
+                </div>
+                <div class="form-group">
+                  <label>CVV</label>
+                  <input type="text" placeholder="123" maxlength="4"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Name on Card</label>
+                <input type="text" placeholder="JOHN DOE"/>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;color:var(--gray);font-size:0.75rem;margin-top:8px">
+                <i class="fa fa-lock" style="color:var(--gold)"></i>
+                Your card details are encrypted and secure
+              </div>
+            </div>
+
+            <!-- OTHER -->
+            <div id="pay-other" style="display:none">
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <div style="background:var(--dark3);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:16px">
+                  <div style="color:var(--white);font-weight:700;font-size:0.88rem;margin-bottom:6px">📱 Airtel Money</div>
+                  <p style="font-size:0.78rem;color:var(--gray)">Send to Till 4130312 via Airtel Money, then place your order below.</p>
+                </div>
+                <div style="background:var(--dark3);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:16px">
+                  <div style="color:var(--white);font-weight:700;font-size:0.88rem;margin-bottom:6px">🏦 Bank Transfer</div>
+                  <p style="font-size:0.78rem;color:var(--gray)">Contact us on WhatsApp for bank transfer details.</p>
+                </div>
+                <a href="https://wa.me/254703927970?text=I want to place an order and pay via bank transfer" target="_blank" class="btn btn-dark" style="width:100%;justify-content:center">
+                  <i class="fab fa-whatsapp" style="color:#25d366"></i> Order via WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Place Order Button -->
+          <button onclick="placeOrder()" class="btn btn-gold btn-lg" style="width:100%;justify-content:center;font-size:1rem">
+            <i class="fa fa-lock"></i> Place Order Securely
+          </button>
+          <p style="text-align:center;margin-top:12px;font-size:0.75rem;color:var(--gray)">
+            By placing your order you agree to our <a href="#" style="color:var(--gold)">Terms & Conditions</a>
+          </p>
+        </div>
+
+        <!-- RIGHT: ORDER SUMMARY -->
+        <div>
+          <div class="order-summary-card">
+            <h3 style="color:var(--white);margin-bottom:18px;font-size:1rem">🛒 Order Summary</h3>
+            <div id="orderItems"></div>
+            <!-- Promo -->
+            <div style="margin:16px 0;padding-top:16px;border-top:1px solid rgba(255,255,255,0.06)">
+              <div style="color:var(--gold);font-size:0.78rem;font-weight:700;margin-bottom:8px">PROMO CODE</div>
+              <div class="promo-row">
+                <input type="text" id="promoInput" placeholder="Enter code e.g. RAYS10"/>
+                <button onclick="applyPromo()" class="btn btn-gold btn-sm">Apply</button>
+              </div>
+              <div id="promoMsg" style="font-size:0.75rem;min-height:16px"></div>
+            </div>
+            <!-- Totals -->
+            <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:14px">
+              <div style="display:flex;justify-content:space-between;padding:6px 0;font-size:0.83rem;color:var(--gray2)">
+                <span>Subtotal</span><span id="summarySubtotal">KES 0</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:6px 0;font-size:0.83rem;color:var(--gray2)">
+                <span>Delivery</span><span id="summaryDelivery">KES 200</span>
+              </div>
+              <div id="discountRow" style="display:none;justify-content:space-between;padding:6px 0;font-size:0.83rem;color:var(--green)">
+                <span>Discount</span><span id="summaryDiscount">-KES 0</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:12px 0 6px;font-size:1rem;font-weight:700;color:var(--white);border-top:1px solid rgba(255,255,255,0.06);margin-top:6px">
+                <span>Total</span><span style="color:var(--gold)" id="summaryTotal">KES 0</span>
+              </div>
+            </div>
+            <!-- Payment info -->
+            <div style="margin-top:16px;background:rgba(0,150,58,0.06);border:1px solid rgba(0,150,58,0.2);border-radius:8px;padding:12px">
+              <div style="font-size:0.75rem;color:var(--green);font-weight:700;margin-bottom:4px">M-Pesa Till Number</div>
+              <div style="font-size:1.4rem;font-weight:800;color:var(--white)">4130312</div>
+              <div style="font-size:0.75rem;color:var(--gray);margin-top:2px">Total: <span id="mpesaAmountConfirm" style="color:var(--gold);font-weight:700">KES 0</span></div>
+            </div>
+            <!-- Trust badges -->
+            <div style="display:flex;justify-content:center;gap:12px;margin-top:16px;flex-wrap:wrap">
+              <div style="text-align:center"><div style="font-size:1.2rem">🔒</div><div style="font-size:0.65rem;color:var(--gray)">Secure</div></div>
+              <div style="text-align:center"><div style="font-size:1.2rem">⚡</div><div style="font-size:0.65rem;color:var(--gray)">Fast Delivery</div></div>
+              <div style="text-align:center"><div style="font-size:1.2rem">↩️</div><div style="font-size:0.65rem;color:var(--gray)">Easy Returns</div></div>
+              <div style="text-align:center"><div style="font-size:1.2rem">⭐</div><div style="font-size:0.65rem;color:var(--gray)">4.9 Rating</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ORDER CONFIRMATION (hidden until order placed) -->
+    <div id="orderConfirmation" style="display:none;max-width:600px;margin:0 auto">
+      <div class="co-card" style="text-align:center;padding:50px 30px">
+        <div class="conf-icon">🎉</div>
+        <h2 style="color:var(--gold);margin-bottom:10px">Order Confirmed!</h2>
+        <p style="color:var(--gray3);margin-bottom:24px">Thank you for shopping with Rays Footwear. Your order has been received and we'll contact you shortly.</p>
+        <div style="background:var(--dark3);border-radius:10px;padding:16px;margin-bottom:24px">
+          <div style="color:var(--gray);font-size:0.78rem;margin-bottom:4px">Order ID</div>
+          <div style="color:var(--white);font-weight:800;font-size:1.2rem" id="confirmOrderId"></div>
+          <div style="color:var(--gold);font-weight:700;margin-top:8px" id="confirmTotal"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <a id="confirmWaBtn" href="#" target="_blank" class="btn btn-gold" style="justify-content:center;width:100%">
+            <i class="fab fa-whatsapp"></i> Confirm Order on WhatsApp
+          </a>
+          <a href="index.html" class="btn btn-dark" style="justify-content:center;width:100%">
+            <i class="fa fa-home"></i> Continue Shopping
+          </a>
+        </div>
+        <div style="margin-top:24px;padding:14px;background:rgba(0,150,58,0.06);border:1px solid rgba(0,150,58,0.2);border-radius:8px">
+          <div style="color:var(--green);font-weight:700;font-size:0.88rem;margin-bottom:6px">💚 Complete Payment</div>
+          <p style="font-size:0.8rem;color:var(--gray3)">Send payment to M-Pesa Till <strong style="color:var(--white)">4130312</strong> and click the WhatsApp button above to confirm your order with your M-Pesa transaction code.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-bottom" style="padding:18px 0">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+      <p>© 2025 Rays Footwear. All rights reserved.</p>
+      <div class="payment-icons"><span class="pay-icon">M-PESA</span><span class="pay-icon">VISA</span><span class="pay-icon">MASTERCARD</span><span class="pay-icon">AIRTEL</span></div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/254703927970?text=Hi%20Rays%20Footwear!%20I%20want%20to%20place%20an%20order." target="_blank" class="wa-float"><i class="fa-brands fa-whatsapp"></i></a>
+<div class="toast" id="toast"><div class="toast-icon" id="toastIcon"></div><div class="toast-text"><div class="title" id="toastTitle"></div><div class="msg" id="toastMsg"></div></div></div>
+
+<!-- Cart drawer (minimal, for nav consistency) -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header"><h3>🛒 Your Cart</h3><button class="cart-close" onclick="document.getElementById('cartDrawer').classList.remove('open');document.getElementById('cartOverlay').classList.remove('show')"><i class="fa fa-times"></i></button></div>
+  <div class="cart-items" id="cartItems"><div class="empty-cart"><div class="icon">🛒</div><p>Complete your checkout!</p></div></div>
+  <div class="cart-footer"><a href="checkout.html" class="btn btn-gold" style="width:100%;justify-content:center">Go to Checkout</a></div>
+</div>
+
+<script src="js/store.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>
+

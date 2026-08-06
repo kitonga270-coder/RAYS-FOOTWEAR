@@ -1,0 +1,316 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kids Shoes — Rays Footwear</title>
+  <meta name="description" content="Shop kids shoes from Nike, Adidas, Jordan and more. Sizes 20-38. Great prices from KES 1,200."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-top">
+    <p>🚀 Free delivery on orders over KES 3,000 &nbsp;|&nbsp; Use code <span class="promo-tag">KIDS20</span> for 20% off kids shoes</p>
+    <p style="color:var(--black)">📍 Nairobi, Kenya &nbsp;|&nbsp; 0703 927 970</p>
+  </div>
+  <div class="nav-main">
+    <a href="index.html" class="nav-logo" style="gap:0">
+      <img src="images/logo.png" alt="Rays Footwear" style="height:46px;width:auto;object-fit:contain;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div style="display:none;align-items:center;gap:8px;">
+        <div class="logo-mark">RF</div>
+        <div><div class="logo-text">Rays <span>Footwear</span></div><div class="logo-sub">Style Beyond the Game</div></div>
+      </div>
+    </a>
+    <div class="nav-search">
+      <input type="text" id="navSearch" placeholder="Search kids shoes, brands, sizes..." autocomplete="off" oninput="onNavSearchInput(this.value)" onkeypress="if(event.key==='Enter')onNavSearchInput(this.value)"/>
+      <button class="search-btn" onclick="onNavSearchInput(document.getElementById('navSearch').value)"><i class="fa fa-search"></i></button>
+      <div class="search-results-dropdown" id="navSearchDropdown" style="display:none"></div>
+    </div>
+    <nav class="nav-menu" id="navMenu">
+      <a href="index.html" data-key="home">Home</a>
+      <a href="sneakers.html" data-key="sneakers">Sneakers</a>
+      <a href="jerseys.html" data-key="jerseys">Jerseys</a>
+      <a href="kids.html" data-key="kids" class="active">Kids</a>
+      <a href="sneakers.html" data-key="sale">Sale</a>
+      <a href="index.html#contact" data-key="contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" onclick="openCart()" title="Cart">
+        <i class="fa fa-shopping-bag"></i>
+        <span class="badge-count cart-badge" style="display:none">0</span>
+      </button>
+      <button class="nav-icon-btn" title="Wishlist"><i class="far fa-heart"></i></button>
+      <a href="https://wa.me/254703927970" target="_blank" class="nav-icon-btn" style="color:#25d366"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <h1>Kids <span class="gold">Shoes</span></h1>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep"><i class="fa fa-chevron-right"></i></span>
+      <span class="cur">Kids</span>
+    </div>
+    <p style="color:var(--gray);margin-top:10px;position:relative;z-index:1">Sizes 20–38 · Toddlers, Kids & Teens · Use code <span style="color:var(--gold);font-weight:700">KIDS20</span> for 20% off</p>
+  </div>
+</div>
+
+<!-- SHOP LAYOUT -->
+<section class="sec-sm">
+  <div class="container">
+    <div class="shop-layout">
+      <!-- FILTERS SIDEBAR -->
+      <aside class="filters-sidebar">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+          <h3 style="color:var(--white)"><i class="fa fa-filter" style="color:var(--gold)"></i> Filters</h3>
+          <button id="clearFilters" class="btn btn-dark btn-sm">Clear All</button>
+        </div>
+
+        <!-- Age Group -->
+        <div class="filter-section">
+          <div class="filter-title">Age Group <i class="fa fa-chevron-down"></i></div>
+          <div class="filter-chips">
+            <span class="filter-chip">🧒 Toddler (1-3yrs)</span>
+            <span class="filter-chip">👦 Kids (4-8yrs)</span>
+            <span class="filter-chip">🧑 Teens (9-16yrs)</span>
+          </div>
+        </div>
+
+        <!-- Size -->
+        <div class="filter-section">
+          <div class="filter-title">Shoe Size (EU) <i class="fa fa-chevron-down"></i></div>
+          <div class="filter-chips">
+            <span class="filter-chip" data-filter-size="20">20</span>
+            <span class="filter-chip" data-filter-size="21">21</span>
+            <span class="filter-chip" data-filter-size="22">22</span>
+            <span class="filter-chip" data-filter-size="23">23</span>
+            <span class="filter-chip" data-filter-size="24">24</span>
+            <span class="filter-chip" data-filter-size="25">25</span>
+            <span class="filter-chip" data-filter-size="26">26</span>
+            <span class="filter-chip" data-filter-size="27">27</span>
+            <span class="filter-chip" data-filter-size="28">28</span>
+            <span class="filter-chip" data-filter-size="29">29</span>
+            <span class="filter-chip" data-filter-size="30">30</span>
+            <span class="filter-chip" data-filter-size="31">31</span>
+            <span class="filter-chip" data-filter-size="32">32</span>
+            <span class="filter-chip" data-filter-size="33">33</span>
+            <span class="filter-chip" data-filter-size="34">34</span>
+            <span class="filter-chip" data-filter-size="35">35</span>
+            <span class="filter-chip" data-filter-size="36">36</span>
+            <span class="filter-chip" data-filter-size="37">37</span>
+            <span class="filter-chip" data-filter-size="38">38</span>
+          </div>
+        </div>
+
+        <!-- Brand -->
+        <div class="filter-section">
+          <div class="filter-title">Brand <i class="fa fa-chevron-down"></i></div>
+          <div class="filter-options">
+            <label class="filter-check"><input type="checkbox" data-filter-brand value="Nike"/> Nike</label>
+            <label class="filter-check"><input type="checkbox" data-filter-brand value="Adidas"/> Adidas</label>
+            <label class="filter-check"><input type="checkbox" data-filter-brand value="Jordan"/> Jordan</label>
+            <label class="filter-check"><input type="checkbox" data-filter-brand value="Puma"/> Puma</label>
+            <label class="filter-check"><input type="checkbox" data-filter-brand value="Converse"/> Converse</label>
+            <label class="filter-check"><input type="checkbox" data-filter-brand value="Vans"/> Vans</label>
+            <label class="filter-check"><input type="checkbox" data-filter-brand value="New Balance"/> New Balance</label>
+            <label class="filter-check"><input type="checkbox" data-filter-brand value="Skechers"/> Skechers</label>
+          </div>
+        </div>
+
+        <!-- Type -->
+        <div class="filter-section">
+          <div class="filter-title">Shoe Type <i class="fa fa-chevron-down"></i></div>
+          <div class="filter-chips">
+            <span class="filter-chip" data-filter-subcat="Casual">Casual</span>
+            <span class="filter-chip" data-filter-subcat="Sports">Sports</span>
+            <span class="filter-chip" data-filter-subcat="Basketball">Basketball</span>
+          </div>
+        </div>
+
+        <!-- Color -->
+        <div class="filter-section">
+          <div class="filter-title">Color <i class="fa fa-chevron-down"></i></div>
+          <div class="filter-chips">
+            <span class="filter-chip" data-filter-color="White">⬜ White</span>
+            <span class="filter-chip" data-filter-color="Black">⬛ Black</span>
+            <span class="filter-chip" data-filter-color="Red">🟥 Red</span>
+            <span class="filter-chip" data-filter-color="Blue">🟦 Blue</span>
+            <span class="filter-chip" data-filter-color="Pink">🩷 Pink</span>
+            <span class="filter-chip" data-filter-color="Green">🟩 Green</span>
+          </div>
+        </div>
+
+        <!-- Price -->
+        <div class="filter-section">
+          <div class="filter-title">Price Range (KES) <i class="fa fa-chevron-down"></i></div>
+          <div class="price-range">
+            <input type="range" id="priceRange" min="0" max="5000" value="5000" step="100"/>
+            <div class="price-inputs">
+              <input type="number" id="priceMin" placeholder="Min" value="0"/>
+              <input type="number" id="priceMax" placeholder="Max" value="5000"/>
+            </div>
+          </div>
+        </div>
+
+        <!-- Availability -->
+        <div class="filter-section">
+          <div class="filter-title">Availability <i class="fa fa-chevron-down"></i></div>
+          <div class="filter-options">
+            <label class="filter-check"><input type="checkbox" id="filterInStock"/> In Stock Only</label>
+            <label class="filter-check"><input type="checkbox" id="filterOnSale"/> On Sale</label>
+          </div>
+        </div>
+
+        <!-- Kids promo -->
+        <div style="background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.2);border-radius:10px;padding:14px;text-align:center">
+          <div style="font-size:1.5rem;margin-bottom:6px">🎁</div>
+          <div style="color:var(--gold);font-weight:700;font-size:0.82rem">Kids Special Offer</div>
+          <div style="color:var(--white);font-size:1.1rem;font-weight:800;margin:4px 0">20% OFF</div>
+          <div style="color:var(--gray);font-size:0.72rem">Use code: <strong style="color:var(--gold)">KIDS20</strong></div>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+      <div>
+        <div class="shop-toolbar">
+          <div class="results">Showing <strong id="resultsCount">0</strong> kids shoes</div>
+          <div style="display:flex;gap:10px;align-items:center">
+            <select id="sortSelect" class="sort-select">
+              <option value="default">Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="rating">Best Rating</option>
+              <option value="reviews">Best Sellers</option>
+              <option value="newest">Newest</option>
+            </select>
+            <div class="view-btns">
+              <button class="view-btn active"><i class="fa fa-grip"></i></button>
+              <button class="view-btn"><i class="fa fa-list"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="active-filters" id="activeFiltersRow"></div>
+        <div class="products-grid" id="productsGrid"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIZE GUIDE -->
+<section class="sec-sm" style="background:var(--dark2)">
+  <div class="container">
+    <div class="sec-title">
+      <span class="tag">Kids Size Guide</span>
+      <h2>Find the Right Fit</h2>
+      <div class="divider"></div>
+    </div>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:0.82rem">
+        <thead>
+          <tr style="background:rgba(212,175,55,0.1)">
+            <th style="padding:12px;color:var(--gold);text-align:left;border-bottom:1px solid rgba(255,255,255,0.08)">Age</th>
+            <th style="padding:12px;color:var(--gold);text-align:left;border-bottom:1px solid rgba(255,255,255,0.08)">EU Size</th>
+            <th style="padding:12px;color:var(--gold);text-align:left;border-bottom:1px solid rgba(255,255,255,0.08)">UK Size</th>
+            <th style="padding:12px;color:var(--gold);text-align:left;border-bottom:1px solid rgba(255,255,255,0.08)">Foot Length</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05)"><td style="padding:10px;color:var(--gray3)">1-2 yrs</td><td style="padding:10px;color:var(--white)">20-22</td><td style="padding:10px;color:var(--gray3)">4-5</td><td style="padding:10px;color:var(--gray3)">12-13.5 cm</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05)"><td style="padding:10px;color:var(--gray3)">2-3 yrs</td><td style="padding:10px;color:var(--white)">23-25</td><td style="padding:10px;color:var(--gray3)">6-7.5</td><td style="padding:10px;color:var(--gray3)">14-15.5 cm</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05)"><td style="padding:10px;color:var(--gray3)">4-6 yrs</td><td style="padding:10px;color:var(--white)">26-29</td><td style="padding:10px;color:var(--gray3)">8.5-11</td><td style="padding:10px;color:var(--gray3)">16-18 cm</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05)"><td style="padding:10px;color:var(--gray3)">7-9 yrs</td><td style="padding:10px;color:var(--white)">30-33</td><td style="padding:10px;color:var(--gray3)">12-1</td><td style="padding:10px;color:var(--gray3)">19-21 cm</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05)"><td style="padding:10px;color:var(--gray3)">10-13 yrs</td><td style="padding:10px;color:var(--white)">34-36</td><td style="padding:10px;color:var(--gray3)">2-4</td><td style="padding:10px;color:var(--gray3)">22-23 cm</td></tr>
+          <tr><td style="padding:10px;color:var(--gray3)">14-16 yrs</td><td style="padding:10px;color:var(--white)">37-38</td><td style="padding:10px;color:var(--gray3)">4.5-5.5</td><td style="padding:10px;color:var(--gray3)">23.5-24.5 cm</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="text-align:center;margin-top:16px;font-size:0.8rem">Not sure about the size? <a href="https://wa.me/254703927970?text=Help me choose the right size for my child" style="color:var(--gold)">Chat with us on WhatsApp</a></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <div class="nav-logo" style="margin-bottom:16px"><div class="logo-mark">RF</div><div><div class="logo-text">Rays <span>Footwear</span></div><div class="logo-sub">Style Beyond the Game</div></div></div>
+          <p>Kenya's most-loved sneaker and jersey destination.</p>
+          <div class="social-row" style="margin-top:16px">
+            <a href="https://wa.me/254703927970" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Quick Links</h4><ul>
+          <li><a href="index.html">Home</a></li><li><a href="sneakers.html">Sneakers</a></li>
+          <li><a href="jerseys.html">Jerseys</a></li><li><a href="kids.html">Kids</a></li></ul>
+        </div>
+        <div class="footer-col"><h4>Help</h4><ul>
+          <li><a href="#">Size Guide</a></li><li><a href="#">Returns</a></li>
+          <li><a href="#">Delivery</a></li><li><a href="#">FAQs</a></li></ul>
+        </div>
+        <div class="footer-col"><h4>Contact</h4><ul>
+          <li><a href="https://wa.me/254703927970"><i class="fab fa-whatsapp" style="color:#25d366;margin-right:6px"></i>0703 927 970</a></li>
+          <li><a href="#"><i class="fa fa-map-marker-alt" style="color:var(--gold);margin-right:6px"></i>Nairobi, Kenya</a></li></ul>
+          <div style="margin-top:12px;padding:10px;background:rgba(212,175,55,0.06);border:1px solid rgba(212,175,55,0.15);border-radius:8px;font-size:0.8rem">
+            <span style="color:var(--gold);font-weight:700">M-Pesa Till: </span><span style="color:var(--white);font-weight:800">4130312</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+      <p>© 2025 Rays Footwear. All rights reserved.</p>
+      <div class="payment-icons"><span class="pay-icon">M-PESA</span><span class="pay-icon">VISA</span><span class="pay-icon">MASTERCARD</span></div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/254703927970?text=Hi%20Rays%20Footwear!%20I%20need%20help%20with%20kids%20shoes." target="_blank" class="wa-float"><i class="fa-brands fa-whatsapp"></i></a>
+<div class="toast" id="toast"><div class="toast-icon" id="toastIcon"></div><div class="toast-text"><div class="title" id="toastTitle"></div><div class="msg" id="toastMsg"></div></div></div>
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header"><h3>🛒 Your Cart</h3><button class="cart-close" onclick="closeCart()"><i class="fa fa-times"></i></button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer">
+    <div class="cart-summary">
+      <div class="cart-row"><span>Subtotal</span><span id="cartSubtotal">KES 0</span></div>
+      <div class="cart-row"><span>Delivery</span><span id="cartDelivery">KES 200</span></div>
+      <div class="cart-row total"><span>Total</span><span class="amount" id="cartTotal">KES 0</span></div>
+    </div>
+    <a href="checkout.html" class="btn btn-gold" style="width:100%;justify-content:center">Checkout <i class="fa fa-arrow-right"></i></a>
+    <button onclick="closeCart()" class="btn btn-dark" style="width:100%;justify-content:center;margin-top:8px">Continue Shopping</button>
+  </div>
+</div>
+
+<script src="js/store.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    initSearch('navSearch', 'navSearchDropdown');
+    initFilterPage('kids');
+  });
+
+  function onNavSearchInput(val) {
+    if (!val.trim()) { document.getElementById('navSearchDropdown').style.display='none'; return; }
+    const results = searchProducts(val);
+    renderSearchDropdown(results, 'navSearchDropdown');
+  }
+</script>
+</body>
+</html>
+
+
+
+

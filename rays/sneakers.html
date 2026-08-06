@@ -1,0 +1,295 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sneakers — Rays Footwear</title>
+  <meta name="description" content="Shop the latest sneakers from Nike, Adidas, Jordan, Puma and more. Free delivery on orders over KES 3,000."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-top">
+    <p>🚀 Free delivery on orders over KES 3,000 &nbsp;|&nbsp; Use code <span class="promo-tag">RAYS10</span> for 10% off</p>
+    <p style="color:var(--black)">📍 Nairobi, Kenya &nbsp;|&nbsp; 0703 927 970</p>
+  </div>
+  <div class="nav-main">
+    <a href="index.html" class="nav-logo" style="gap:0">
+      <img src="images/logo.png" alt="Rays Footwear" style="height:46px;width:auto;object-fit:contain;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div style="display:none;align-items:center;gap:8px;">
+        <div class="logo-mark">RF</div>
+        <div><div class="logo-text">Rays <span>Footwear</span></div><div class="logo-sub">Style Beyond the Game</div></div>
+      </div>
+    </a>
+    <div class="nav-search">
+      <input type="text" id="navSearch" placeholder="Search sneakers, brands, sizes..." autocomplete="off" oninput="onNavSearchInput(this.value)" onkeypress="if(event.key==='Enter')onNavSearchInput(this.value)"/>
+      <button class="search-btn" onclick="onNavSearchInput(document.getElementById('navSearch').value)"><i class="fa fa-search"></i></button>
+      <div class="search-results-dropdown" id="navSearchDropdown" style="display:none"></div>
+    </div>
+    <nav class="nav-menu" id="navMenu">
+      <a href="index.html" data-key="home">Home</a>
+      <a href="sneakers.html" data-key="sneakers" class="active">Sneakers</a>
+      <a href="jerseys.html" data-key="jerseys">Jerseys</a>
+      <a href="kids.html" data-key="kids">Kids</a>
+      <a href="sneakers.html#sale" data-key="sale">Sale</a>
+      <a href="index.html#contact" data-key="contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" onclick="openCart()" title="Cart">
+        <i class="fa fa-shopping-bag"></i>
+        <span class="badge-count cart-badge" style="display:none">0</span>
+      </button>
+      <button class="nav-icon-btn" title="Wishlist"><i class="far fa-heart"></i></button>
+      <a href="https://wa.me/254703927970" target="_blank" class="nav-icon-btn" style="color:#25d366"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <h1>Sneakers <span class="gold">Shop</span></h1>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep"><i class="fa fa-chevron-right"></i></span>
+      <span class="cur">Sneakers</span>
+    </div>
+  </div>
+</div>
+
+<!-- SEARCH BAR -->
+<div style="background:var(--dark2);padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.05)">
+  <div class="container">
+    <div style="position:relative;max-width:600px;margin:0 auto">
+      <input type="text" id="shopSearch" placeholder="🔍 Search e.g. 'Nike size 42', 'white Jordan', 'running shoes'..." autocomplete="off"
+        style="width:100%;background:var(--dark3);border:1px solid rgba(212,175,55,0.3);border-radius:50px;padding:14px 50px 14px 22px;color:var(--white);font-size:0.9rem;font-family:var(--font)"/>
+      <button onclick="document.getElementById('shopSearch').dispatchEvent(new Event('input'))"
+        style="position:absolute;right:6px;top:50%;transform:translateY(-50%);background:linear-gradient(135deg,var(--gold),var(--gold2));border:none;width:38px;height:38px;border-radius:50%;cursor:pointer;color:var(--black)">
+        <i class="fa fa-search"></i>
+      </button>
+      <div class="search-results-dropdown" id="shopSearchDropdown" style="display:none"></div>
+    </div>
+  </div>
+</div>
+
+<!-- SHOP LAYOUT -->
+<section class="sec-sm">
+  <div class="container">
+    <div class="shop-layout">
+      <!-- FILTERS SIDEBAR -->
+      <aside class="filters-sidebar">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+          <h3 style="color:var(--white)"><i class="fa fa-filter" style="color:var(--gold)"></i> Filters</h3>
+          <button id="clearFilters" class="btn btn-dark btn-sm">Clear All</button>
+        </div>
+
+        <!-- Brand -->
+        <div class="filter-section">
+          <div class="filter-title">Brand <i class="fa fa-chevron-down"></i></div>
+          <div class="filter-options">
+            <label class="filter-check"><input type="checkbox" data-filter-brand value="Nike"/> Nike <span class="count">6</span></label>
+            <label class="filter-check"><input type="checkbox" data-filter-brand value="Adidas"/> Adidas <span class="count">5</span></label>
+            <label class="filter-check"><input type="checkbox" data-filter-brand value="Jordan"/> Jordan <span class="count">2</span></label>
+            <label class="filter-check"><input type="checkbox" data-filter-brand value="Puma"/> Puma <span class="count">2</span></label>
+            <label class="filter-check"><input type="checkbox" data-filter-brand value="New Balance"/> New Balance <span class="count">2</span></label>
+            <label class="filter-check"><input type="checkbox" data-filter-brand value="Converse"/> Converse <span class="count">1</span></label>
+            <label class="filter-check"><input type="checkbox" data-filter-brand value="Vans"/> Vans <span class="count">1</span></label>
+            <label class="filter-check"><input type="checkbox" data-filter-brand value="ASICS"/> ASICS <span class="count">1</span></label>
+            <label class="filter-check"><input type="checkbox" data-filter-brand value="Skechers"/> Skechers <span class="count">1</span></label>
+            <label class="filter-check"><input type="checkbox" data-filter-brand value="Reebok"/> Reebok <span class="count">1</span></label>
+          </div>
+        </div>
+
+        <!-- Size -->
+        <div class="filter-section">
+          <div class="filter-title">Size (EU) <i class="fa fa-chevron-down"></i></div>
+          <div class="filter-chips">
+            <span class="filter-chip" data-filter-size="38">38</span>
+            <span class="filter-chip" data-filter-size="39">39</span>
+            <span class="filter-chip" data-filter-size="40">40</span>
+            <span class="filter-chip" data-filter-size="41">41</span>
+            <span class="filter-chip" data-filter-size="42">42</span>
+            <span class="filter-chip" data-filter-size="43">43</span>
+            <span class="filter-chip" data-filter-size="44">44</span>
+            <span class="filter-chip" data-filter-size="45">45</span>
+            <span class="filter-chip" data-filter-size="46">46</span>
+            <span class="filter-chip" data-filter-size="47">47</span>
+          </div>
+        </div>
+
+        <!-- Color -->
+        <div class="filter-section">
+          <div class="filter-title">Color <i class="fa fa-chevron-down"></i></div>
+          <div class="filter-chips">
+            <span class="filter-chip" data-filter-color="White">⬜ White</span>
+            <span class="filter-chip" data-filter-color="Black">⬛ Black</span>
+            <span class="filter-chip" data-filter-color="Red">🟥 Red</span>
+            <span class="filter-chip" data-filter-color="Blue">🟦 Blue</span>
+            <span class="filter-chip" data-filter-color="Grey">🩶 Grey</span>
+            <span class="filter-chip" data-filter-color="Green">🟩 Green</span>
+          </div>
+        </div>
+
+        <!-- Gender -->
+        <div class="filter-section">
+          <div class="filter-title">Gender <i class="fa fa-chevron-down"></i></div>
+          <div class="filter-chips">
+            <span class="filter-chip" data-filter-gender="Men">Men</span>
+            <span class="filter-chip" data-filter-gender="Women">Women</span>
+            <span class="filter-chip" data-filter-gender="Unisex">Unisex</span>
+          </div>
+        </div>
+
+        <!-- Category -->
+        <div class="filter-section">
+          <div class="filter-title">Category <i class="fa fa-chevron-down"></i></div>
+          <div class="filter-chips">
+            <span class="filter-chip" data-filter-subcat="Running">Running</span>
+            <span class="filter-chip" data-filter-subcat="Basketball">Basketball</span>
+            <span class="filter-chip" data-filter-subcat="Casual">Casual</span>
+            <span class="filter-chip" data-filter-subcat="Lifestyle">Lifestyle</span>
+            <span class="filter-chip" data-filter-subcat="Training">Training</span>
+          </div>
+        </div>
+
+        <!-- Price -->
+        <div class="filter-section">
+          <div class="filter-title">Price Range (KES) <i class="fa fa-chevron-down"></i></div>
+          <div class="price-range">
+            <input type="range" id="priceRange" min="0" max="20000" value="20000" step="500"/>
+            <div class="price-inputs">
+              <input type="number" id="priceMin" placeholder="Min" value="0"/>
+              <input type="number" id="priceMax" placeholder="Max" value="20000"/>
+            </div>
+          </div>
+        </div>
+
+        <!-- Availability -->
+        <div class="filter-section">
+          <div class="filter-title">Availability <i class="fa fa-chevron-down"></i></div>
+          <div class="filter-options">
+            <label class="filter-check"><input type="checkbox" id="filterInStock"/> In Stock Only</label>
+            <label class="filter-check"><input type="checkbox" id="filterOnSale"/> On Sale</label>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <div>
+        <!-- Toolbar -->
+        <div class="shop-toolbar">
+          <div class="results">Showing <strong id="resultsCount">0</strong> sneakers</div>
+          <div style="display:flex;gap:10px;align-items:center">
+            <select id="sortSelect" class="sort-select">
+              <option value="default">Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="rating">Best Rating</option>
+              <option value="reviews">Best Sellers</option>
+              <option value="newest">Newest</option>
+            </select>
+            <div class="view-btns">
+              <button class="view-btn active" title="Grid"><i class="fa fa-grip"></i></button>
+              <button class="view-btn" title="List"><i class="fa fa-list"></i></button>
+            </div>
+          </div>
+        </div>
+        <!-- Active filters -->
+        <div class="active-filters" id="activeFiltersRow"></div>
+        <!-- Products Grid -->
+        <div class="products-grid" id="productsGrid"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <div class="nav-logo" style="margin-bottom:16px"><div class="logo-mark">RF</div><div><div class="logo-text">Rays <span>Footwear</span></div><div class="logo-sub">Style Beyond the Game</div></div></div>
+          <p>Kenya's most-loved sneaker and jersey destination. Authentic products, fast delivery, and unbeatable prices.</p>
+          <div class="social-row" style="margin-top:16px">
+            <a href="https://wa.me/254703927970" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Quick Links</h4><ul>
+          <li><a href="index.html">Home</a></li><li><a href="sneakers.html">Sneakers</a></li>
+          <li><a href="jerseys.html">Jerseys</a></li><li><a href="kids.html">Kids</a></li></ul>
+        </div>
+        <div class="footer-col"><h4>Help</h4><ul>
+          <li><a href="#">Size Guide</a></li><li><a href="#">Returns</a></li>
+          <li><a href="#">Delivery</a></li><li><a href="#">FAQs</a></li></ul>
+        </div>
+        <div class="footer-col"><h4>Contact</h4><ul>
+          <li><a href="https://wa.me/254703927970"><i class="fab fa-whatsapp" style="color:#25d366;margin-right:6px"></i>0703 927 970</a></li>
+          <li><a href="#"><i class="fa fa-map-marker-alt" style="color:var(--gold);margin-right:6px"></i>Nairobi, Kenya</a></li>
+        </ul>
+        <div style="margin-top:12px;padding:10px;background:rgba(212,175,55,0.06);border:1px solid rgba(212,175,55,0.15);border-radius:8px;font-size:0.8rem">
+          <span style="color:var(--gold);font-weight:700">M-Pesa Till: </span><span style="color:var(--white);font-weight:800">4130312</span>
+        </div></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+      <p>© 2025 Rays Footwear. All rights reserved.</p>
+      <div class="payment-icons"><span class="pay-icon">M-PESA</span><span class="pay-icon">VISA</span><span class="pay-icon">MASTERCARD</span></div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/254703927970?text=Hi%20Rays%20Footwear!%20I%20want%20to%20place%20an%20order." target="_blank" class="wa-float"><i class="fa-brands fa-whatsapp"></i></a>
+<div class="toast" id="toast"><div class="toast-icon" id="toastIcon"></div><div class="toast-text"><div class="title" id="toastTitle"></div><div class="msg" id="toastMsg"></div></div></div>
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header"><h3>🛒 Your Cart</h3><button class="cart-close" onclick="closeCart()"><i class="fa fa-times"></i></button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer">
+    <div class="cart-summary">
+      <div class="cart-row"><span>Subtotal</span><span id="cartSubtotal">KES 0</span></div>
+      <div class="cart-row"><span>Delivery</span><span id="cartDelivery">KES 200</span></div>
+      <div class="cart-row total"><span>Total</span><span class="amount" id="cartTotal">KES 0</span></div>
+    </div>
+    <a href="checkout.html" class="btn btn-gold" style="width:100%;justify-content:center">Checkout <i class="fa fa-arrow-right"></i></a>
+    <button onclick="closeCart()" class="btn btn-dark" style="width:100%;justify-content:center;margin-top:8px">Continue Shopping</button>
+  </div>
+</div>
+
+<script src="js/store.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    initSearch('navSearch', 'navSearchDropdown');
+    initSearch('shopSearch', 'shopSearchDropdown');
+    initFilterPage('sneakers');
+    // Auto-apply search from URL query param
+    const q = new URLSearchParams(window.location.search).get('q');
+    if (q) {
+      const inp = document.getElementById('shopSearch');
+      if (inp) { inp.value = q; onNavSearchInput(q); }
+    }
+  });
+
+  function onNavSearchInput(val) {
+    if (!val.trim()) { document.getElementById('navSearchDropdown').style.display='none'; return; }
+    const results = searchProducts(val);
+    renderSearchDropdown(results, 'navSearchDropdown');
+  }
+</script>
+</body>
+</html>
+
+
+
+

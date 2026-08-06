@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rays Footwear — Style Beyond the Game</title>
+  <meta name="description" content="Kenya's #1 Sneaker & Jersey Destination. Shop Nike, Adidas, Jordan and more. Fast delivery in Nairobi."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-top">
+    <p>🚀 Free delivery on orders over KES 3,000 &nbsp;|&nbsp; Use code <span class="promo-tag">RAYS10</span> for 10% off</p>
+    <p style="color:var(--black)">📍 Nairobi, Kenya &nbsp;|&nbsp; 0703 927 970</p>
+  </div>
+  <div class="nav-main">
+    <a href="index.html" class="nav-logo" style="gap:0">
+      <img src="images/logo.png" alt="Rays Footwear" style="height:46px;width:auto;object-fit:contain;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div style="display:none;align-items:center;gap:8px;">
+        <div class="logo-mark">RF</div>
+        <div><div class="logo-text">Rays <span>Footwear</span></div><div class="logo-sub">Style Beyond the Game</div></div>
+      </div>
+    </a>
+    <div class="nav-search">
+      <input type="text" id="navSearch" placeholder="Search sneakers, jerseys, brands..." autocomplete="off"
+        onkeypress="if(event.key==='Enter'){doNavSearch()}"
+        oninput="onNavSearchInput(this.value)"/>
+      <button class="search-btn" onclick="doNavSearch()"><i class="fa fa-search"></i></button>
+      <div class="search-results-dropdown" id="navSearchDropdown" style="display:none"></div>
+    </div>
+    <nav class="nav-menu" id="navMenu">
+      <a href="index.html" data-key="home" class="active">Home</a>
+      <a href="sneakers.html" data-key="sneakers">Sneakers</a>
+      <a href="jerseys.html" data-key="jerseys">Jerseys</a>
+      <a href="kids.html" data-key="kids">Kids</a>
+      <a href="sneakers.html#sale" data-key="sale">Sale</a>
+      <a href="#contact" data-key="contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" onclick="openCart()" title="Cart">
+        <i class="fa fa-shopping-bag"></i>
+        <span class="badge-count cart-badge" style="display:none">0</span>
+      </button>
+      <button class="nav-icon-btn" title="Wishlist">
+        <i class="far fa-heart"></i>
+      </button>
+      <a href="https://wa.me/254703927970" target="_blank" class="nav-icon-btn" title="WhatsApp" style="color:#25d366">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-tag"><i class="fa fa-fire" style="color:var(--gold)"></i> Kenya's Most-Loved Footwear Store</div>
+      <h1 class="hero-title">
+        <span class="line1">Kenya's #1 Sneaker &</span><br>
+        <span class="line2">Jersey Destination</span>
+      </h1>
+      <p class="hero-desc">Authentic kicks and jerseys for every player and fashion lover. From Nike Air Force to Arsenal Home — we've got your style covered. Same-day delivery in Nairobi.</p>
+      <div class="hero-btns">
+        <a href="sneakers.html" class="btn btn-gold btn-lg"><i class="fa fa-shoe-prints"></i> Shop Sneakers</a>
+        <a href="jerseys.html" class="btn btn-outline btn-lg"><i class="fa fa-futbol"></i> Shop Jerseys</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">500+</div><div class="lbl">Products</div></div>
+        <div class="hero-stat"><div class="num">10K+</div><div class="lbl">Customers</div></div>
+        <div class="hero-stat"><div class="num">4.9★</div><div class="lbl">Rating</div></div>
+        <div class="hero-stat"><div class="num">⚡</div><div class="lbl">Same Day Delivery</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-cards-grid">
+        <div class="hero-card-float">
+          <div style="font-size:3.5rem;text-align:center;padding:10px">👟</div>
+          <div style="text-align:center;font-size:0.75rem;color:var(--gold);font-weight:700">Nike Air Force 1</div>
+          <div style="text-align:center;font-size:0.85rem;font-weight:700;color:var(--white)">KES 8,500</div>
+        </div>
+        <div class="hero-card-float">
+          <div style="font-size:3.5rem;text-align:center;padding:10px">⚽</div>
+          <div style="text-align:center;font-size:0.75rem;color:var(--gold);font-weight:700">Real Madrid Jersey</div>
+          <div style="text-align:center;font-size:0.85rem;font-weight:700;color:var(--white)">KES 3,800</div>
+        </div>
+        <div class="hero-card-float">
+          <div style="font-size:3.5rem;text-align:center;padding:10px">👟</div>
+          <div style="text-align:center;font-size:0.75rem;color:var(--gold);font-weight:700">Jordan 1 Retro</div>
+          <div style="text-align:center;font-size:0.85rem;font-weight:700;color:var(--white)">KES 14,500</div>
+        </div>
+        <div class="hero-card-float">
+          <div style="font-size:3.5rem;text-align:center;padding:10px">🇰🇪</div>
+          <div style="text-align:center;font-size:0.75rem;color:var(--gold);font-weight:700">Kenya Jersey</div>
+          <div style="text-align:center;font-size:0.85rem;font-weight:700;color:var(--white)">KES 2,500</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLASH SALE -->
+<section style="background:var(--dark2);padding:30px 0">
+  <div class="container">
+    <div class="flash-banner" id="flashTimer">
+      <div class="flash-info">
+        <h3>🔥 Flash Sale — Ends Soon!</h3>
+        <p>Up to 40% off on selected sneakers and jerseys. Limited stock!</p>
+      </div>
+      <div class="flash-timer">
+        <div class="flash-time-box"><span class="num">08</span><span class="lbl">Hours</span></div>
+        <span class="flash-sep">:</span>
+        <div class="flash-time-box"><span class="num">00</span><span class="lbl">Mins</span></div>
+        <span class="flash-sep">:</span>
+        <div class="flash-time-box"><span class="num">00</span><span class="lbl">Secs</span></div>
+      </div>
+      <a href="sneakers.html" class="btn btn-red">Shop Sale <i class="fa fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="sec">
+  <div class="container">
+    <div class="sec-title">
+      <span class="tag">Browse by Category</span>
+      <h2>Shop Our Collections</h2>
+      <div class="divider"></div>
+      <p>Explore our curated categories from top global brands</p>
+    </div>
+    <div class="categories-grid">
+      <a href="sneakers.html" class="cat-card">
+        <div class="cat-bg">👟</div>
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <div class="cat-name">Sneakers</div>
+          <div class="cat-count">200+ Products</div>
+        </div>
+        <div class="cat-arrow"><i class="fa fa-arrow-right"></i></div>
+      </a>
+      <a href="jerseys.html" class="cat-card">
+        <div class="cat-bg">⚽</div>
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <div class="cat-name">Jerseys</div>
+          <div class="cat-count">150+ Products</div>
+        </div>
+        <div class="cat-arrow"><i class="fa fa-arrow-right"></i></div>
+      </a>
+      <a href="kids.html" class="cat-card">
+        <div class="cat-bg">🧒</div>
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <div class="cat-name">Kids Shoes</div>
+          <div class="cat-count">100+ Products</div>
+        </div>
+        <div class="cat-arrow"><i class="fa fa-arrow-right"></i></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="sec" style="background:var(--dark2)">
+  <div class="container">
+    <div class="sec-title">
+      <span class="tag">Editor's Pick</span>
+      <h2>Featured Products</h2>
+      <div class="divider"></div>
+      <p>Hand-picked styles that are trending right now</p>
+    </div>
+    <div class="products-grid" id="featuredGrid"></div>
+    <div style="text-align:center;margin-top:35px">
+      <a href="sneakers.html" class="btn btn-outline">View All Products <i class="fa fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- POPULAR BRANDS -->
+<section class="sec">
+  <div class="container">
+    <div class="sec-title">
+      <span class="tag">Top Brands</span>
+      <h2>Popular Brands</h2>
+      <div class="divider"></div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px">
+      <a href="sneakers.html" class="btn btn-dark" style="font-size:1rem;font-weight:800">Nike</a>
+      <a href="sneakers.html" class="btn btn-dark" style="font-size:1rem;font-weight:800">Adidas</a>
+      <a href="sneakers.html" class="btn btn-dark" style="font-size:1rem;font-weight:800">Jordan</a>
+      <a href="sneakers.html" class="btn btn-dark" style="font-size:1rem;font-weight:800">Puma</a>
+      <a href="sneakers.html" class="btn btn-dark" style="font-size:1rem;font-weight:800">New Balance</a>
+      <a href="sneakers.html" class="btn btn-dark" style="font-size:1rem;font-weight:800">Converse</a>
+      <a href="sneakers.html" class="btn btn-dark" style="font-size:1rem;font-weight:800">Vans</a>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOMER REVIEWS -->
+<section class="sec" style="background:var(--dark2)">
+  <div class="container">
+    <div class="sec-title">
+      <span class="tag">What Customers Say</span>
+      <h2>Verified Reviews</h2>
+      <div class="divider"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px">
+      <div class="loyalty-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--black)">JM</div>
+          <div><div style="color:var(--white);font-weight:700;font-size:0.9rem">James Mwangi</div><div style="color:var(--gray);font-size:0.72rem">Nairobi, Kenya</div></div>
+        </div>
+        <div style="color:var(--gold);margin-bottom:8px">★★★★★</div>
+        <p style="font-size:0.82rem;color:var(--gray3)">"Got my Nike Air Force 1s in 3 hours! Quality is legit and price is unbeatable. Rays Footwear is my go-to store."</p>
+      </div>
+      <div class="loyalty-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--black)">AK</div>
+          <div><div style="color:var(--white);font-weight:700;font-size:0.9rem">Amina Kamau</div><div style="color:var(--gray);font-size:0.72rem">Westlands, Nairobi</div></div>
+        </div>
+        <div style="color:var(--gold);margin-bottom:8px">★★★★★</div>
+        <p style="font-size:0.82rem;color:var(--gray3)">"Ordered custom jerseys for my son's team. The name printing is clean and the delivery was super fast. Highly recommend!"</p>
+      </div>
+      <div class="loyalty-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--black)">BO</div>
+          <div><div style="color:var(--white);font-weight:700;font-size:0.9rem">Brian Otieno</div><div style="color:var(--gray);font-size:0.72rem">Kilimani, Nairobi</div></div>
+        </div>
+        <div style="color:var(--gold);margin-bottom:8px">★★★★★</div>
+        <p style="font-size:0.82rem;color:var(--gray3)">"The Jordan 4s I got are fire! Real deal quality. Customer service on WhatsApp is very responsive. 10/10 experience."</p>
+      </div>
+      <div class="loyalty-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--black)">FN</div>
+          <div><div style="color:var(--white);font-weight:700;font-size:0.9rem">Fatuma Njoroge</div><div style="color:var(--gray);font-size:0.72rem">Mombasa Road, Nairobi</div></div>
+        </div>
+        <div style="color:var(--gold);margin-bottom:8px">★★★★☆</div>
+        <p style="font-size:0.82rem;color:var(--gray3)">"Bought kids shoes for my twins and they love them! Great value for money and the sizing guide was very helpful."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOYALTY PROGRAM -->
+<section class="sec">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center">
+      <div>
+        <span class="tag" style="display:inline-block;background:rgba(212,175,55,0.1);color:var(--gold);font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:5px 16px;border-radius:50px;border:1px solid rgba(212,175,55,0.25);margin-bottom:12px">Rewards Program</span>
+        <h2>Earn Points with Every Purchase</h2>
+        <div class="divider" style="margin:14px 0"></div>
+        <p style="margin-bottom:20px">Join the Rays Rewards Club and earn 1 point for every KES 10 spent. Redeem points for discounts on future orders.</p>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;align-items:center;gap:12px"><span style="color:var(--gold);font-size:1.2rem">🏆</span><span style="color:var(--gray3);font-size:0.88rem">1 point = KES 10 spent</span></div>
+          <div style="display:flex;align-items:center;gap:12px"><span style="color:var(--gold);font-size:1.2rem">🎁</span><span style="color:var(--gray3);font-size:0.88rem">100 points = KES 100 discount</span></div>
+          <div style="display:flex;align-items:center;gap:12px"><span style="color:var(--gold);font-size:1.2rem">⭐</span><span style="color:var(--gray3);font-size:0.88rem">Gold members get early access to sales</span></div>
+        </div>
+        <a href="https://wa.me/254703927970?text=I want to join Rays Rewards" class="btn btn-gold" style="margin-top:24px">Join Rewards Club</a>
+      </div>
+      <div class="loyalty-card" style="text-align:center">
+        <div style="font-size:3rem;margin-bottom:10px">🏅</div>
+        <h3 style="color:var(--white);margin-bottom:6px">Your Points Balance</h3>
+        <div class="points-display" id="pointsDisplay">0</div>
+        <p style="margin-top:6px;font-size:0.78rem">Points</p>
+        <div style="margin-top:20px;padding:12px;background:rgba(212,175,55,0.08);border-radius:10px;font-size:0.8rem;color:var(--gray3)">
+          Earn <strong style="color:var(--gold)">350 points</strong> when you shop today with code <strong style="color:var(--gold)">RAYS10</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <div style="margin-bottom:16px">
+            <img src="images/logo.png" alt="Rays Footwear — Style Beyond the Game" style="height:60px;width:auto;object-fit:contain;" onerror="this.style.display='none'"/>
+          </div>
+          <p>Kenya's most-loved sneaker and jersey destination. Authentic products, fast delivery, and unbeatable prices since 2019.</p>
+          <div class="social-row" style="margin-top:16px">
+            <a href="https://wa.me/254703927970" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sneakers.html">Sneakers</a></li>
+            <li><a href="jerseys.html">Jerseys</a></li>
+            <li><a href="kids.html">Kids Shoes</a></li>
+            <li><a href="sneakers.html">Sale</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Customer Service</h4>
+          <ul>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">Delivery Info</a></li>
+            <li><a href="#">Track Order</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="https://wa.me/254703927970"><i class="fab fa-whatsapp" style="color:#25d366;margin-right:6px"></i>0703 927 970</a></li>
+            <li><a href="tel:+254703927970"><i class="fa fa-phone" style="color:var(--gold);margin-right:6px"></i>+254 703 927 970</a></li>
+            <li><a href="mailto:info@raysfootwear.co.ke"><i class="fa fa-envelope" style="color:var(--gold);margin-right:6px"></i>info@raysfootwear.co.ke</a></li>
+            <li><a href="#"><i class="fa fa-map-marker-alt" style="color:var(--gold);margin-right:6px"></i>Nairobi, Kenya</a></li>
+          </ul>
+          <div style="margin-top:16px;padding:12px;background:rgba(212,175,55,0.06);border:1px solid rgba(212,175,55,0.15);border-radius:10px">
+            <div style="font-size:0.75rem;color:var(--gold);font-weight:700;margin-bottom:4px">M-Pesa Paybill/Till</div>
+            <div style="font-size:1.4rem;font-weight:800;color:var(--white)">4130312</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+      <p>© 2025 Rays Footwear. All rights reserved. | Style Beyond the Game</p>
+      <div class="payment-icons">
+        <span class="pay-icon">M-PESA</span>
+        <span class="pay-icon">VISA</span>
+        <span class="pay-icon">MASTERCARD</span>
+        <span class="pay-icon">AIRTEL</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/254703927970?text=Hi%20Rays%20Footwear!%20I%20want%20to%20place%20an%20order." target="_blank" class="wa-float"><i class="fa-brands fa-whatsapp"></i></a>
+
+<!-- TOAST -->
+<div class="toast" id="toast"><div class="toast-icon" id="toastIcon"></div><div class="toast-text"><div class="title" id="toastTitle"></div><div class="msg" id="toastMsg"></div></div></div>
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>🛒 Your Cart <span id="cartCountHeader"></span></h3>
+    <button class="cart-close" id="closeCart" onclick="closeCart()"><i class="fa fa-times"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer">
+    <div class="cart-summary">
+      <div class="cart-row"><span>Subtotal</span><span id="cartSubtotal">KES 0</span></div>
+      <div class="cart-row"><span>Delivery</span><span id="cartDelivery">KES 200</span></div>
+      <div class="cart-row total"><span>Total</span><span class="amount" id="cartTotal">KES 0</span></div>
+    </div>
+    <a href="checkout.html" class="btn btn-gold" style="width:100%;justify-content:center">Checkout <i class="fa fa-arrow-right"></i></a>
+    <button onclick="closeCart()" class="btn btn-dark" style="width:100%;justify-content:center;margin-top:8px">Continue Shopping</button>
+  </div>
+</div>
+
+<script src="js/store.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const featured = PRODUCTS.filter(p => p.badge === 'hot' || p.badge === 'new').slice(0, 8);
+    renderProducts(featured, 'featuredGrid');
+    updatePointsDisplay();
+    initSearch('navSearch', 'navSearchDropdown');
+  });
+
+  function onNavSearchInput(val) {
+    const results = searchProducts(val);
+    renderSearchDropdown(results, 'navSearchDropdown');
+  }
+
+  function doNavSearch() {
+    const val = document.getElementById('navSearch').value.trim();
+    if (!val) return;
+    // Redirect to sneakers page with search query in URL
+    window.location.href = 'sneakers.html?q=' + encodeURIComponent(val);
+  }
+</script>
+</body>
+</html>
